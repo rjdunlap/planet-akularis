@@ -10,13 +10,13 @@ function MapGen_Akularis()
     --map_gen_setting.terrain_segmentation = "very-high"
 
     map_gen_setting.autoplace_controls = {
-        ["stone"] = { frequency = 0.5, size = 0.5, richness = 0.5},
-        ["iron-ore"] = { frequency = 0.5, size = 0.5, richness = 0.5},
-        ["coal"] = { frequency = 0.5, size = 0.5, richness = 0.5},
-        ["copper-ore"] = { frequency = 0.5, size = 0.5, richness = 0.5},
-        ["crude-oil"] = { frequency = 0.5, size = 0.5, richness = 0.5},
-        ["trees"] = { frequency = 0.5, size = 0.5, richness = 0.5 },
-        ["rocks"] = { frequency = 500, size = 500, richness = 500},
+        ["stone"] = { frequency = 0, size = 0, richness = 0},
+        ["iron-ore"] = { frequency = 0, size = 0, richness = 0},
+        ["coal"] = { frequency = 0, size = 0, richness = 0},
+        ["copper-ore"] = { frequency = 0, size = 0, richness = 0},
+        ["crude-oil"] = { frequency = 4, size = 4, richness = 4},
+        ["trees"] = { frequency = 1, size = 1, richness = 1 },
+        ["rocks"] = { frequency = 200, size = 20, richness = 20},
         ["water"] = { frequency = 0, size = 0, richness = 0 },
         ["uranium-ore"] = { frequency = 0, size = 0, richness = 0 },
     }
