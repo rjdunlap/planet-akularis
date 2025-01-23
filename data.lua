@@ -10,6 +10,7 @@ function MapGen_Akularis()
     --map_gen_setting.terrain_segmentation = "very-high"
 
     map_gen_setting.autoplace_controls = {
+        ["enemy-base"] = { frequency = 2, size = 1, richness = 1},
         ["stone"] = { frequency = 0, size = 0, richness = 0},
         ["iron-ore"] = { frequency = 0, size = 0, richness = 0},
         ["coal"] = { frequency = 0, size = 0, richness = 0},
@@ -87,6 +88,7 @@ local akularis_connection = {
   }
 
 PlanetsLib:extend({akularis})
+PlanetsLib.borrow_music(data.raw["planet"]["nauvis"], akularis)
 
 data:extend{akularis_connection}
 

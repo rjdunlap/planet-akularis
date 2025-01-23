@@ -1,1 +1,2 @@
-APS.set_fixed_choice("akularis")
+APS.add_choice("akularis")
+APS.set_default_choice("akularis")
