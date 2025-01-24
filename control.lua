@@ -33,8 +33,11 @@ local function get_chances()
     if randomValue < 50 then
         return 'iron-ore'
     end
-    if ( randomValue < 75) then
+    if ( randomValue < 70) then
         return 'copper-ore'
+    end
+    if ( randomValue < 80) then
+        return 'stone'
     end
     
     return 'coal'
@@ -59,9 +62,9 @@ local function get_amount(entity)
 end
 
 local function get_vamount(position)
-    local distance_to_center = math.sqrt(position.x ^ 2 + position.y ^ 2) * 2 + 1500
+    local distance_to_center = math.sqrt(position.x ^ 2 + position.y ^ 2) * 2 + 100
     distance_to_center = distance_to_center * 1
-    local m = (25 + math.random(0, 50)) * 0.01
+    local m = (10 + math.random(0, 50)) * 0.01
     return distance_to_center * m
 end
 
@@ -145,7 +148,7 @@ local function on_player_mined_entity(event)
     local count = get_amount(entity)
     local ore_amount = math.floor(count * 0.85) + 1
     local stone_amount = math.floor(count * 0.15) + 1
-    if math.random(0, 100) < 10  then
+    if math.random(0, 100) < 8  then
         ore_vein(event, ore)
     end
     entity.destroy()

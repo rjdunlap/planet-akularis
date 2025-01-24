@@ -10,7 +10,7 @@ function MapGen_Akularis()
     --map_gen_setting.terrain_segmentation = "very-high"
 
     map_gen_setting.autoplace_controls = {
-        ["enemy-base"] = { frequency = 3, size = 1, richness = 1},
+        ["enemy-base"] = { frequency = 3.25, size = 1.25, richness = 1.25},
         ["stone"] = { frequency = 0, size = 0, richness = 0},
         ["iron-ore"] = { frequency = 0, size = 0, richness = 0},
         ["coal"] = { frequency = 0, size = 0, richness = 0},
@@ -73,7 +73,7 @@ local akularis=
     starmap_icon_size = 512,
     magnitude = nauvis.magnitude,
     surface_properties = {
-        ["solar-power"] = 100,
+        ["solar-power"] = 175,
         ["pressure"] = nauvis.surface_properties["pressure"],
         ["magnetic-field"] = nauvis.surface_properties["magnetic-field"],
         ["day-night-cycle"] = nauvis.surface_properties["day-night-cycle"],
