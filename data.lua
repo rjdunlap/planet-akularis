@@ -10,7 +10,7 @@ function MapGen_Akularis()
     --map_gen_setting.terrain_segmentation = "very-high"
 
     map_gen_setting.autoplace_controls = {
-        ["enemy-base"] = { frequency = 2, size = 1, richness = 1},
+        ["enemy-base"] = { frequency = 3, size = 1, richness = 1},
         ["stone"] = { frequency = 0, size = 0, richness = 0},
         ["iron-ore"] = { frequency = 0, size = 0, richness = 0},
         ["coal"] = { frequency = 0, size = 0, richness = 0},
@@ -148,6 +148,139 @@ data:extend {{
     },
     order = "ea[akularis]",
 }}
+
+data:extend {
+{
+    type = "technology",
+    name = "akularis-steel-axe1",
+    icon = "__base__/graphics/technology/steel-axe.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "character-mining-speed",
+        modifier = 0.25
+      }
+    },
+    prerequisites = {"steel-axe"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 6
+    }
+  },
+  {
+    type = "technology",
+    name = "akularis-steel-axe2",
+    icon = "__base__/graphics/technology/steel-axe.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "character-mining-speed",
+        modifier = 0.25
+      }
+    },
+    prerequisites = {"akularis-steel-axe1"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 12
+    }
+  },
+  {
+    type = "technology",
+    name = "akularis-steel-axe3",
+    icon = "__base__/graphics/technology/steel-axe.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "character-mining-speed",
+        modifier = 0.25
+      }
+    },
+    prerequisites = {"akularis-steel-axe2"},
+    unit =
+    {
+      count = 250,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1}
+      },
+      time = 25
+    }
+  },
+  {
+    type = "technology",
+    name = "akularis-steel-axe4",
+    icon = "__base__/graphics/technology/steel-axe.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "character-mining-speed",
+        modifier = 0.25
+      }
+    },
+    prerequisites = {"akularis-steel-axe3"},
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 50
+    }
+  },
+  {
+    type = "technology",
+    name = "akularis-steel-axe5",
+    icon = "__base__/graphics/technology/steel-axe.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "character-mining-speed",
+        modifier = 0.25
+      }
+    },
+    prerequisites = {"akularis-steel-axe4"},
+    unit =
+    {
+      count = 1000,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1}
+      },
+      time = 100
+    }
+  }
+}
 
 
 APS.add_planet{name = "akularis", filename = "__planet-akularis__/akularis.lua", technology = "planet-discovery-akularis"}

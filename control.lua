@@ -10,7 +10,7 @@ local rock_yield = {
     ['big-sand-rock'] = 1
 }
 local rocks_yield_ore_distance_modifier = 0.25
-local rocks_yield_ore_base_amount = 35
+local rocks_yield_ore_base_amount = 15
 local rocks_yield_ore_maximum_amount = 150
 
 local function shuffle_table(t)
@@ -61,7 +61,7 @@ end
 local function get_vamount(position)
     local distance_to_center = math.sqrt(position.x ^ 2 + position.y ^ 2) * 2 + 1500
     distance_to_center = distance_to_center * 1
-    local m = (75 + math.random(0, 50)) * 0.01
+    local m = (25 + math.random(0, 50)) * 0.01
     return distance_to_center * m
 end
 
@@ -145,7 +145,7 @@ local function on_player_mined_entity(event)
     local count = get_amount(entity)
     local ore_amount = math.floor(count * 0.85) + 1
     local stone_amount = math.floor(count * 0.15) + 1
-    if math.random(0, 100) < 20  then
+    if math.random(0, 100) < 10  then
         ore_vein(event, ore)
     end
     entity.destroy()
