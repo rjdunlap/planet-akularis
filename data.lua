@@ -20,6 +20,21 @@ function MapGen_Akularis()
         ["rocks"] = { frequency = 200, size = 20, richness = 20},
         ["water"] = { frequency = 0, size = 0, richness = 0 },
     }
+
+    map_gen_setting.autoplace_settings["entity"] =  { 
+        settings =
+        {
+            ["iron-ore"] = {},
+            ["copper-ore"] = {},
+            ["stone"] = {},
+            ["coal"] = {},
+            ["crude-oil"] = {},
+            ["fish"] = {},
+            ["big-sand-rock"] = {},
+            ["huge-rock"] = {},
+            ["big-rock"] = {},
+        }
+    }
     return map_gen_setting
 end
 -- increse stone patch size in start area
@@ -73,8 +88,8 @@ akularis.orbit = {
         type = "space-location",
         name = "star",
     },
-    distance = 0.75,
-    orientation = 0.44
+    distance = 14,
+    orientation = 0.35
 }
 
 local akularis_connection = {
@@ -87,10 +102,21 @@ local akularis_connection = {
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_gleba),
   }
 
+  local akularis_connection2 = {
+    type = "space-connection",
+    name = "vulcanus-akularis",
+    from = "vulcanus",
+    to = "akularis",
+    subgroup = data.raw["space-connection"]["nauvis-vulcanus"].subgroup,
+    length = 15000,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_gleba),
+  }
+
 PlanetsLib:extend({akularis})
 PlanetsLib.borrow_music(data.raw["planet"]["nauvis"], akularis)
 
 data:extend{akularis_connection}
+data:extend{akularis_connection2}
 
 data:extend {{
     type = "technology",

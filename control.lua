@@ -1,3 +1,6 @@
+script.on_init(function()
+    game.forces.player.set_surface_hidden(game.surfaces.nauvis, true)
+end)
 
 local max_spill = 60
 
