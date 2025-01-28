@@ -162,7 +162,7 @@ data:extend {
         modifier = 0.25
       }
     },
-    prerequisites = {"steel-axe"},
+    prerequisites = {"steel-axe", "planet-discovery-akularis"},
     unit =
     {
       count = 50,
