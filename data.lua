@@ -77,6 +77,8 @@ local akularis=
         ["pressure"] = nauvis.surface_properties["pressure"],
         ["magnetic-field"] = nauvis.surface_properties["magnetic-field"],
         ["day-night-cycle"] = nauvis.surface_properties["day-night-cycle"],
+        ["gravity"] = 12,
+
     },
     map_gen_settings = MapGen_Akularis(),
     asteroid_spawn_influence = 1,
@@ -122,8 +124,8 @@ data:extend{akularis_connection2}
 data:extend {{
     type = "technology",
     name = "planet-discovery-akularis",
-    icons = util.technology_icon_constant_planet("__planet-akularis__/graphics/planet-akularis.png"),
-    icon_size = 256,
+    icons = PlanetsLib.technology_icon_constant_planet("__planet-akularis__/graphics/planet-akularis.png", 512),
+    icon_size = 512,
     essential = true,
     localised_description = {"space-location-description.akularis"},
     effects = {
@@ -148,6 +150,8 @@ data:extend {{
     },
     order = "ea[akularis]",
 }}
+
+--log("tech " .. serpent.block(data.raw.technology["planet-discovery-akularis"]))
 
 data:extend {
 {
